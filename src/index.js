@@ -1,32 +1,21 @@
 import Phaser from "phaser";
-import logoImg from "./assets/logo.png";
+import loadscene from "./scenes/load";
+import mainscene from "./scenes/main";
+import hudscene from "./scenes/hud";
+import resultscene from "./scenes/result";
 
-const config = {
-  type: Phaser.AUTO,
-  parent: "phaser-example",
-  width: 800,
-  height: 600,
-  scene: {
-    preload: preload,
-    create: create
-  }
-};
-
-const game = new Phaser.Game(config);
-
-function preload() {
-  this.load.image("logo", logoImg);
-}
-
-function create() {
-  const logo = this.add.image(400, 150, "logo");
-
-  this.tweens.add({
-    targets: logo,
-    y: 450,
-    duration: 2000,
-    ease: "Power2",
-    yoyo: true,
-    loop: -1
-  });
-}
+var game = new Phaser.Game({
+	type: Phaser.AUTO, 
+	scale: {
+        mode: Phaser.Scale.FIT,
+        parent: 'sfvjs',
+        autoCenter: Phaser.Scale.WIDTH_CONTROLS_HEIGHT,
+        width: 800,
+        height: 600
+    },
+	input: { gamepad: true },
+    physics: { default: 'arcade', arcade: { gravity: { y: 650 }, debug: true } },
+    dom: { createContainer: true },
+	scene: [loadscene, mainscene, hudscene, resultscene]
+});
+var gamepad;
