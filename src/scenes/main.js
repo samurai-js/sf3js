@@ -1,4 +1,4 @@
-import Player from "../models/Player"
+import Player from "../models/player"
 import Stage from "../models/stage";
 import Collissions from "../functions/collision"
 import Camera from "../functions/camera"
