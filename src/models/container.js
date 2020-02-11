@@ -1,7 +1,7 @@
 import Bod from "./bod"
 import Effects from "./effects"
-import Hitbox from './Hitbox'
-import Hurtbox from './Hurtbox'
+import Hitbox from './hitbox'
+import Hurtbox from './hurtbox'
 
 var Container = new Phaser.Class({
     Extends: Phaser.GameObjects.Container,
