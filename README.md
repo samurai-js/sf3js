@@ -1,6 +1,6 @@
 # Phaser 3 Street Fighter
 
-Re-create Street Fighter on Phaser 3
+Re-create Street Fighter on Phaser 3 JS framework
 
 ## Requirements
 
