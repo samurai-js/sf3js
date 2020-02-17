@@ -6,7 +6,8 @@
   "scripts": {
     "heroku-prebuild": "npm install --dev",
     "build": "webpack --config webpack/prod.js ",
-    "start": "webpack-dev-server --config webpack/base.js --open"
+    "start": "webpack-dev-server --config webpack/base.js --open",
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
