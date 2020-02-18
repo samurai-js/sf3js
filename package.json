@@ -6,7 +6,7 @@
   "scripts": {
     "heroku-prebuild": "npm install --dev",
     "build": "webpack --config webpack/prod.js ",
-    "start": "webpack-dev-server --port $PORT --host 0.0.0.0",
+    "start": "webpack-dev-server --port $PORT --host 0.0.0.0 --config webpack/base.js --open",
     "heroku-postbuild": "webpack -p"
   },
   "repository": {
