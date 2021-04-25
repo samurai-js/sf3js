@@ -3,7 +3,7 @@
     "comment":"Prove yourself",
     "mov":[
             {"name":"stance","frame":{"start":2593,"end":2602,"frameRate":12,"repeat":-1}},
-            {"name":"walkf","frame":{"start":2604,"end":2618,"frameRate":12,"repeat":-1},"speed":150},
+            {"name":"walkf","frame":{"start":2604,"end":2619,"frameRate":12,"repeat":-1},"speed":150},
             {"name":"walkb","frame":{"start":2620,"end":2632,"frameRate":12,"repeat":-1},"speed":100},
             {"name":"jump","frame":{"start":2656,"end":2667,"frameRate":10,"repeat":0},"speedY":320},
             {"name":"jumpf","frame":{"start":2923,"end":2930,"frameRate":8,"repeat":-1},"speedX":170,"speedY":380},

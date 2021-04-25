@@ -26,10 +26,11 @@ by default).
 ## Project Structure
 
 ### Folders
-assets - contains the sprite textures
-config - contains character configurations
-functions - contains common functions, controller, listeners
-models - contains player components
-scenes - various scenes used
-index.js - entry point
-
+| Folder | Description |
+|---------|-------------|
+| `assets` | contains the sprite textures |
+| `config` | contains character configurations |
+| `functions` | contains common functions, controller, listeners |
+| `models` | contains player components |
+| `scenes` | various scenes used |
+| `index.js` | entry point |
