@@ -1,5 +1,5 @@
-import Stage from "../models/stage";
-import Camera from "../functions/camera"
+import Stage from "src/models/stage";
+
 //Result after match
 var resultscene = new Phaser.Class({
 	Extends: Phaser.Scene,

@@ -1,4 +1,4 @@
-import Healthbar from '../models/healthbar'
+import Healthbar from 'src/models/healthbar'
 
 var Match = new Phaser.Class({
 	initialize:
@@ -25,12 +25,21 @@ var Match = new Phaser.Class({
 		this.p2health = new Healthbar(this.scene,{id: 'p2', x: 450, y: 80, width: 300, height: 15})
 		this.p1stun = new Healthbar(this.scene,{id: 'p1', x: 200, y: 110, width: 150, height: 8, showDamage : false, autoDecrease: true, flipped: true})
 		this.p2stun = new Healthbar(this.scene,{id: 'p2', x: 450, y: 110, width: 150, height: 8, showDamage : false, autoDecrease: true })
-		this.p1power = new Healthbar(this.scene,{id: 'p1', x: 50, y: 555, width: 300, height: 10, showDamage : false, flipped: true})
-		this.p2power = new Healthbar(this.scene,{id: 'p2', x: 450, y: 555, width: 300, height: 10, showDamage : false })
+		this.p1ex = new Healthbar(this.scene,{id: 'p1', x: 50, y: 555, width: 100, height: 10, showDamage : false, flipped: true})
+		this.p2ex = new Healthbar(this.scene,{id: 'p2', x: 450, y: 555, width: 100, height: 10, showDamage : false })
+		this.p1ex1 = new Healthbar(this.scene,{id: 'p1', x: 150, y: 555, width: 100, height: 10, showDamage : false, flipped: true})
+		this.p2ex1 = new Healthbar(this.scene,{id: 'p2', x: 550, y: 555, width: 100, height: 10, showDamage : false })
+		this.p1ex2 = new Healthbar(this.scene,{id: 'p1', x: 250, y: 555, width: 100, height: 10, showDamage : false, flipped: true})
+		this.p2ex2 = new Healthbar(this.scene,{id: 'p2', x: 650, y: 555, width: 100, height: 10, showDamage : false })
+
 		this.p1stun.setPercent(0)
 		this.p2stun.setPercent(0)
-		this.p1power.setPercent(0)
-		this.p2power.setPercent(0)
+		this.p1ex.setPercent(0)
+		this.p2ex.setPercent(0)
+		this.p1ex1.setPercent(0)
+		this.p2ex1.setPercent(0)
+		this.p1ex2.setPercent(0)
+		this.p2ex2.setPercent(0)
 		
 		this.p1name = this.createText({ x: 70, y: 120, text: this.player1.config.name.toUpperCase(), scrollFactor: 0, fontSize: 20, font: 'Arial', shadow: '', color: '#fff', stroke: '#000', strokeWidth: 4, origin: 0.5, visible: true, align: 'left' })
 		this.p2name = this.createText({ x: 730, y: 120, text: this.player2.config.name.toUpperCase(), scrollFactor: 0, fontSize: 20, font: 'Arial', shadow: '', color: '#fff', stroke: '#000', strokeWidth: 4, origin: 0.5, visible: true, align: 'right' })
@@ -107,7 +116,7 @@ var Match = new Phaser.Class({
 				blockAnim.removeFrameAt(noFrames)
 			}
 		}, this);
-		this.updatePower(opponent, config)
+		this.updateEx(opponent, config)
 		//this.updateStun(opponent, config)		
 		opponent.tblock(config)
 	},
@@ -218,12 +227,12 @@ var Match = new Phaser.Class({
 			this[player.id + 'stun'].setPercent(stun)
 		}
 	},
-	updatePower: function(player, config){
+	updateEx: function(player, config){
 		player.setPower(config.stun)
-		var power = player.getPower()
-		if(power > 0){
-			this[player.id + 'power'].setColor(0x9dbff9, 0x5391fc) //blue
-			this[player.id + 'power'].setPercent(power)
+		var ex = player.getPower()
+		if(ex > 0){
+			this[player.id + 'ex'].setColor(0x9dbff9, 0x5391fc) //blue
+			this[player.id + 'ex'].setPercent(ex)
 		}
 	}
 });

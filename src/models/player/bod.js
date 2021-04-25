@@ -8,7 +8,7 @@ var Bod = new Phaser.Class({
             this.id = config.id;
             this.scene = scene
             this.id == 'p2' ? this.flipX = true: this.flipX = false
-            this.loadFrames(scene);
+            this.loadFrames();
             scene.add.existing(this);
     },
     loadFrames: function () {
