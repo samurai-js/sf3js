@@ -9,8 +9,8 @@ var loadscene = new Phaser.Class({
         var charpath = "/assets/char/"
         this.load.multiatlas('ryu', charpath + 'ryu/ryu.json', charpath + 'ryu');
         this.load.multiatlas('ken', charpath + 'ken/ken.json', charpath + 'ken');
-        this.load.json('ryu-config', 'config/char/ryu.json');
-        this.load.json('ken-config', 'config/char/ken.json');
+        this.load.script('p1-config', 'config/char/ryu.js');
+        this.load.script('p2-config', 'config/char/ken.js');
         this.load.script('fx-config', 'config/effects/effect.js');
         this.load.image('base', '../assets/stages/ground.png');
         this.load.image('white_spark', '/assets/particles/white.png');
@@ -22,15 +22,13 @@ var loadscene = new Phaser.Class({
         }
     },
     create: function(){
-        var p1 = this.cache.json.get('ryu-config');
-        var p2 = this.cache.json.get('ken-config');
         var random = Phaser.Math.Between(1, 2)
         if (random == 1){
-            this.configs.push(p1); p1.id = 'p1'
-            this.configs.push(p2); p2.id = 'p2'
+            this.configs.push(ryu); ryu.id = 'p1'
+            this.configs.push(ken); ken.id = 'p2'
         }else{
-            this.configs.push(p1); p1.id = 'p2'
-            this.configs.push(p2); p2.id = 'p1'
+            this.configs.push(ryu); ryu.id = 'p2'
+            this.configs.push(ken); ken.id = 'p1'
         }
         this.configs.push(effects)
         var data = {result: {round: 1, p1wins: 0, p2wins: 0}}

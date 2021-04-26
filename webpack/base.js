@@ -10,11 +10,6 @@ module.exports = {
     contentBase: './src',
     disableHostCheck: true
   },
-  resolve: {
-    alias: {
-      src: path.resolve(__dirname, '../src')
-    }
-  },
   module: {
     rules: [
       {

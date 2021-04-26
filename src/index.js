@@ -1,9 +1,8 @@
 import Phaser from "phaser";
-import splash from "src/scenes/splash"
-import loadscene from "src/scenes/load";
-import mainscene from "src/scenes/main";
-import hudscene from "src/scenes/hud";
-import resultscene from "src/scenes/result";
+import loadscene from "./scenes/load";
+import mainscene from "./scenes/main";
+import hudscene from "./scenes/hud";
+import resultscene from "./scenes/result";
 
 var game = new Phaser.Game({
 	type: Phaser.AUTO, 
@@ -15,7 +14,7 @@ var game = new Phaser.Game({
         height: 600
     },
 	input: { gamepad: true },
-    physics: { default: 'arcade', arcade: { gravity: { y: 700 }, debug: true } },
+    physics: { default: 'arcade', arcade: { gravity: { y: 650 }, debug: true } },
     dom: { createContainer: true },
 	scene: [loadscene, mainscene, hudscene, resultscene]
 });

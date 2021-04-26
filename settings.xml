@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<pluginGroups>
+		<pluginGroup>org.mule.tools</pluginGroup>
+	</pluginGroups>
+	<servers>
+		<server>
+			<id>mule-ee</id>
+			<username>chorus.nexus</username>
+			<password>8ms9j63a2pm56</password>
+		</server>
+		<server>
+			<id>jfrog</id>
+			<username>jenkins_access</username>
+			<password>o218MA684e</password>
+		</server>
+	</servers>
+  	<profiles>
+		<profile>
+			<id>Mule</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<repository>
+					<id>jfrog</id>
+					<name>Chorus JFrog</name>
+					<url>https://chorus.jfrog.io/artifactory/local-chorus/</url>
+				</repository>
+				<repository>
+					<id>ApacheR</id>
+					<name>ApacheR</name>
+					<url>https://repository.apache.org/content/repositories/releases/</url>
+					<layout>default</layout>
+				</repository>
+				<repository>
+					<id>Central</id>
+					<name>Central</name>
+					<url>https://repo1.maven.org/maven2/</url>
+					<layout>default</layout>
+				</repository>
+				<repository>
+					<id>mule-ee</id>
+					<name>MuleSoft EE Repository</name>
+					<url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
+					<layout>default</layout>
+				</repository>
+				<repository>
+					<id>mulesoft-releases</id>
+					<name>MuleSoft Releases Repository</name>
+					<url>https://repository.mulesoft.org/releases/</url>
+					<layout>default</layout>
+				</repository>
+				<repository>
+					<id>mulesoft-snapshots</id>
+					<name>MuleSoft Snapshots Repository</name>
+					<url>https://repository.mulesoft.org/snapshots/</url>
+					<layout>default</layout>
+				</repository>
+				<repository>
+					<id>mulesoft-public</id>
+					<name>MuleSoft Public Repository</name>
+					<url>https://repository.mulesoft.org/nexus/content/groups/public/</url>
+					<layout>default</layout>
+				</repository>
+				<repository>
+					<id>fusesource</id>
+					<name>FuseSource</name>
+					<url>https://repo.fusesource.com/nexus/content/repositories/releases/</url>
+				</repository>
+				<repository>
+					<id>redhat</id>
+					<name>Redhat</name>
+					<url>https://maven.repository.redhat.com/ga/</url>
+				</repository>
+				<repository>
+					<id>spring</id>
+					<name>Spring</name>
+					<url>https://repo.spring.io/plugins-release/</url>
+				</repository>
+				<repository>
+					<id>geom</id>
+					<name>Geomajas</name>
+					<url>http://maven.geomajas.org/</url>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>mule-ee-public</id>
+					<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+				</pluginRepository>
+				<pluginRepository>
+					<id>mulesoft-release</id>
+					<name>mulesoft release repository</name>
+					<layout>default</layout>
+					<url>https://repository.mulesoft.org/releases/</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</pluginRepository>
+				
+			</pluginRepositories>
+		</profile>
+	</profiles>
+	<proxies>
+		<!-- <proxy>
+      <id>chorus-proxy</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <port>8081</port>      
+      <host>proxy-hlz.chorus.co.nz</host>
+      <nonProxyHosts>bitbucket.org</nonProxyHosts>
+    </proxy> -->
+	</proxies>
+</settings>
+

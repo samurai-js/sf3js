@@ -1,4 +1,4 @@
-import Match from "src/functions/match";
+import Match from "../functions/match";
 //Hud, match
 var hudscene = new Phaser.Class({
 	Extends: Phaser.Scene,
@@ -7,9 +7,9 @@ var hudscene = new Phaser.Class({
 			Phaser.Scene.call(this, { key: 'hudscene', active: false });
 	},
 	preload: function () {
-		var ms = this.scene.get('mainscene');
-		this.player1 = ms.player1
-		this.player2 = ms.player2
+		var mainscene = this.scene.get('mainscene');
+		this.player1 = mainscene.player1
+		this.player2 = mainscene.player2
 	},
 	create: function (result) {
 		this.match = new Match(this, result)

@@ -1,7 +1,7 @@
-import Bod from "src/models/player/bod"
-import Effects from "src/models/player/effects"
-import Hitbox from 'src/models/player/hitbox'
-import Hurtbox from 'src/models/player/hurtbox'
+import Bod from "./bod"
+import Effects from "./effects"
+import Hitbox from './hitbox'
+import Hurtbox from './hurtbox'
 
 var Container = new Phaser.Class({
     Extends: Phaser.GameObjects.Container,
@@ -10,13 +10,18 @@ var Container = new Phaser.Class({
             Phaser.GameObjects.Container.call(this, scene, x, y, null)
             this.id = config.id
             this.name = this.id + "-container"
-            //this.scene = scene
+            this.scene = scene
             this.depth = 1
-            this.add(this.setShadow()) 
-            this.add(new Bod(this.scene, config)) 
-            this.add(new Hitbox(this.scene, this.id)) 
-            this.add(new Hurtbox(this.scene, this.id)) 
-            this.add(new Effects(this.scene, scene.configs[2])) 
+            var shadow = this.shadow()
+            var bod = new Bod(this.scene, config)
+            var hitbox = new Hitbox(this.scene, this.id)
+            var hurtbox = new Hurtbox(this.scene, this.id)
+            var effects = new Effects(this.scene, scene.configs[2])
+            this.add(shadow) 
+            this.add(bod) 
+            this.add(hitbox) 
+            this.add(hurtbox) 
+            this.add(effects) 
             this.setSize(config.width, 1);      
             scene.add.existing(this);  
             scene.physics.add.existing(this);   
@@ -26,7 +31,7 @@ var Container = new Phaser.Class({
             this.body.setCollideWorldBounds(true);
             this.body.setMass(config.weight)
         },
-        setShadow: function(){
+        shadow: function(){
             var ellipse = new Phaser.Geom.Ellipse(0, 55, 90, 15)
             var shadow = new Phaser.GameObjects.Graphics(this.scene)
             shadow.name = 'shadow'

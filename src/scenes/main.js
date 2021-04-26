@@ -1,7 +1,7 @@
-import Player from "src/models/player/player"
-import Stage from "src/models/stage";
-import Collissions from "src/functions/collision"
-import Camera from "src/functions/camera"
+import Player from "../models/player"
+import Stage from "../models/stage";
+import Collissions from "../functions/collision"
+import Camera from "../functions/camera"
 
 var mainscene = new Phaser.Class({
 	Extends: Phaser.Scene,

@@ -1,15 +1,14 @@
-import Container from 'src/models/player/container'
-import Input from 'src/functions/input'
-import Fireball from 'src/models/player/fireball'
+import Container from './container'
+import Input from '../functions/input'
+import Fireball from './fireball'
 
 var Player = new Phaser.Class({
-    Extends: Phaser.GameObjects.GameObject,
     initialize:
         function Player(id, scene, config) {
             this.id = id
-            config.id = this.id
             this.scene = scene
             this.hud = this.scene.scene.get('hudscene');
+            config.id = this.id
             this.config = config;
 
             var x = this.id == 'p1' ? 300 : 500;
@@ -17,12 +16,12 @@ var Player = new Phaser.Class({
             this.f = 'f'
             this.b = 'b'
             this.dir = 'n'
-            this.blocking = false
+            this.blocking = true
             this.health = config.health
             this.stun = 0
             this.power = 0
             this.wins = 0
-            
+
             this.container = new Container(scene, x, 500, this.config)
             this.bod = this.container.getByName('bod')
             this.effects = this.container.getByName('effects')
