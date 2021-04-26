@@ -11,9 +11,7 @@ var splash = new Phaser.Class({
 	},
 	create: function () {
 		this.stage.start()
-		console.log(this.cameras.main.centerX)
-		this.cameras.main.zoom = 1.2
-		this.cameras.main.y = -25
+		console.log(this.cameras.cameras)
 	},
 	update: function () { 
 		
